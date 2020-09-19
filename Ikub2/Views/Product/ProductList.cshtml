@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Ikub2.Models.Product>
+@{
+    ViewBag.Title = "ProductList";
+}
+
+<h2>ProductList</h2>
+
+<table class="table">
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Price
+    </th>
+  </tr>
+  @foreach(var item in Model)
+  {
+    <tr>
+      <td>
+        @item.id
+      </td>
+      <td>
+        @Html.ActionLink(item.name, "Details", new { @id=item.id})
+      </td>
+      <td>
+        @item.price
+      </td>
+    </tr>
+  }
+</table>
+
